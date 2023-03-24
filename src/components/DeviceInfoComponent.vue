@@ -1,49 +1,42 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { ref, withDefaults } from 'vue'
   const show1 = ref(false)
   const show2 = ref(false)
   // const show3 =ref(false);
-
-  const deviceInfo = ref([
+  const props = withDefaults(
+    defineProps<{
+      deviceInfo:
+        | {
+            asNumber: string
+            rd: string
+            importPolicy: string
+            exportPolicy: string
+            interface: {
+              name: string
+              detail: {
+                description: string
+                ipAddress: string[]
+              }
+            }[]
+            routing: {
+              bgpNeighbor: {
+                address: string
+                as: string
+              }[]
+            }
+          }[]
+        | null
+    }>(),
     {
-      asNumber: '65534',
-      rd: '65534:100',
-      importPolicy: 'SET-C10',
-      exportPolicy: 'SET-C10',
-      interface: [
-        {
-          name: 'bundleEther1.100',
-          detail: {
-            description: 'to-Node11',
-            ipAddress: [' 192.168.11.1/24'],
-          },
-        },
-        {
-          name: 'gigabitEthernet0/0/0/0',
-          detail: {
-            description: 'to - Node21',
-            ipAddress: [
-              { address: '192.168.21.1/24' },
-              { address: '192.168.22.1/29', secondary: true },
-              { address: '192.168.23.1/29', secondary: true },
-            ],
-          },
-        },
-      ],
-      routing: {
-        bgpNeighbor: [
-          { address: '192.168.21.2', as: '18000' },
-          { address: '192.168.21.3', as: '18000' },
-        ],
-      },
-    },
-  ])
+      deviceInfo: null,
+    }
+  )
 </script>
 
 <template>
-  <v-card class="mx-auto" style="width: 500px" v-for="(item, deviceIndex) in deviceInfo" :key="deviceIndex">
+  <v-card class="mx-auto" style="width: 500px" v-for="(item, deviceIndex) in props.deviceInfo" :key="deviceIndex">
     <!-- General Information start -->
-    <v-card-title> General Information </v-card-title>
+    <v-card-title>{{ item }}</v-card-title>
 
     <v-table fixed-header style="padding-left: 16px; padding-right: 16px">
       <tbody>
