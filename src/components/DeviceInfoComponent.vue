@@ -11,7 +11,6 @@
       rd: '65534:100',
       importPolicy: 'SET-C10',
       exportPolicy: 'SET-C10',
-
       interface: [
         {
           'bundleEther1.100': {
@@ -47,7 +46,7 @@
 </script>
 
 <template>
-  <v-card class="mx-auto" style="width: 500px" v-for="(item, itemIndex) in deviceInfo" :key="itemIndex">
+  <v-card class="mx-auto" style="width: 500px" v-for="(item, deviceIndex) in deviceInfo" :key="deviceIndex">
     <!-- General Information start -->
     <v-card-title> General Information </v-card-title>
 
