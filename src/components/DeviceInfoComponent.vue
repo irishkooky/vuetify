@@ -4,7 +4,7 @@
   const show2 = ref(false)
   // const show3 =ref(false);
 
-  const deviceInfomations = ref([
+  const deviceInfo = ref([
     {
       //
       asNumber: '65534',
@@ -47,7 +47,7 @@
 </script>
 
 <template>
-  <v-card class="mx-auto" style="width: 500px" v-for="item in deviceInfomations">
+  <v-card class="mx-auto" style="width: 500px" v-for="item in deviceInfo">
     <!-- General Infomation start -->
     <v-card-title> General Infomation </v-card-title>
 
