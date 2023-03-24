@@ -93,7 +93,12 @@
               <v-divider style="border-top-width: 0px"></v-divider>
               <tr>
                 <td>IP Address</td>
-                <td>{{ item.asNumber }}</td>
+                <td>
+                  <div v-for="(ipAddress, ipIndex) in inter.detail.ipAddress" :key="ipIndex">
+                    {{ ipAddress.address }}
+                    <span v-if="ipAddress.secondary">secondary</span>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </v-table>
