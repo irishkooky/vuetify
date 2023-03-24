@@ -48,8 +48,8 @@
 
 <template>
   <v-card class="mx-auto" style="width: 500px" v-for="(item, itemIndex) in deviceInfo" :key="itemIndex">
-    <!-- General Infomation start -->
-    <v-card-title> General Infomation </v-card-title>
+    <!-- General Information start -->
+    <v-card-title> General Information </v-card-title>
 
     <v-table fixed-header style="padding-left: 16px; padding-right: 16px">
       <tbody>
@@ -77,7 +77,7 @@
         </tr>
       </tbody>
     </v-table>
-    <!-- General Infomation end -->
+    <!-- General Information end -->
 
     <!-- Interface start -->
     <v-card-actions style="padding: 0px">
