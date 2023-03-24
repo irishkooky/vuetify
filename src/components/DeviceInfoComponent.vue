@@ -47,7 +47,7 @@
 </script>
 
 <template>
-  <v-card class="mx-auto" style="width: 500px" v-for="item in deviceInfo">
+  <v-card class="mx-auto" style="width: 500px" v-for="(item, itemIndex) in deviceInfo" :key="itemIndex">
     <!-- General Infomation start -->
     <v-card-title> General Infomation </v-card-title>
 
