@@ -6,7 +6,6 @@
 
   const deviceInfo = ref([
     {
-      //
       asNumber: '65534',
       rd: '65534:100',
       importPolicy: 'SET-C10',
@@ -31,16 +30,10 @@
       ],
       routing: {
         bgpNeighbor: [
-          //固定
           { address: '192.168.21.2', as: '18000' },
           { address: '192.168.21.3', as: '18000' },
         ],
       },
-      // srPolicy: [
-      //     { endpoint: 'ACR11', color: '10' },
-      //     { endpoint: 'ACR12', color: '10' },
-      //     { endpoint: 'WSE12', color: '10' }
-      // ]
     },
   ])
 </script>
