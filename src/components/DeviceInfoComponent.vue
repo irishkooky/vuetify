@@ -39,7 +39,7 @@
 <template>
   <v-card class="mx-auto" style="width: 500px" v-for="(item, deviceIndex) in props.deviceInfo" :key="deviceIndex">
     <!-- General Information start -->
-    <v-card-title>{{ item }}</v-card-title>
+    <v-card-title>General Information</v-card-title>
 
     <v-table fixed-header style="padding-left: 16px; padding-right: 16px">
       <tbody>

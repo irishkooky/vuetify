@@ -70,6 +70,7 @@
       },
     },
   ]
+  // const deviceInfo = axios.get('https://cisco/deviceInfo')
 </script>
 
 <template>
