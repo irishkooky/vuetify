@@ -1,57 +1,53 @@
-<script lang="ts" setup>
-import { ref } from "vue";
-const show1 = ref(false);
-const show2 = ref(false);
-// const show3 =ref(false);
+<script setup lang="ts">
+  import { ref } from 'vue'
+  const show1 = ref(false)
+  const show2 = ref(false)
+  // const show3 =ref(false);
 
-const deviceInfomations = ref([
-  {
-    //
-    asNumber: "65534",
-    rd: "65534:100",
-    importPolicy: "SET-C10",
-    exportPolicy: "SET-C10",
+  const deviceInfomations = ref([
+    {
+      //
+      asNumber: '65534',
+      rd: '65534:100',
+      importPolicy: 'SET-C10',
+      exportPolicy: 'SET-C10',
 
-    interface: [
-      {
-        "bundleEther1.100": {
-          //Interface名（可変）
-          description: "to-Node11",
-          ipAddress: [" 192.168.11.1/24"],
+      interface: [
+        {
+          'bundleEther1.100': {
+            //Interface名（可変）
+            description: 'to-Node11',
+            ipAddress: [' 192.168.11.1/24'],
+          },
+          'gigabitEthernet0/0/0/0': {
+            //Interface名（可変）
+            description: 'to - Node21',
+            ipAddress: [
+              { address: '192.168.21.1/24' },
+              { address: '192.168.22.1/29', secondary: true },
+              { address: '192.168.23.1/29', secondary: true },
+            ],
+          },
         },
-        "gigabitEthernet0/0/0/0": {
-          //Interface名（可変）
-          description: "to - Node21",
-          ipAddress: [
-            { address: "192.168.21.1/24" },
-            { address: "192.168.22.1/29", secondary: true },
-            { address: "192.168.23.1/29", secondary: true },
-          ],
-        },
-      },
-    ],
-    routing: {
-      bgpNeighbor: [
-        //固定
-        { address: "192.168.21.2", as: "18000" },
-        { address: "192.168.21.3", as: "18000" },
       ],
+      routing: {
+        bgpNeighbor: [
+          //固定
+          { address: '192.168.21.2', as: '18000' },
+          { address: '192.168.21.3', as: '18000' },
+        ],
+      },
+      // srPolicy: [
+      //     { endpoint: 'ACR11', color: '10' },
+      //     { endpoint: 'ACR12', color: '10' },
+      //     { endpoint: 'WSE12', color: '10' }
+      // ]
     },
-    // srPolicy: [
-    //     { endpoint: 'ACR11', color: '10' },
-    //     { endpoint: 'ACR12', color: '10' },
-    //     { endpoint: 'WSE12', color: '10' }
-    // ]
-  },
-]);
+  ])
 </script>
 
 <template>
-  <v-card
-    class="mx-auto"
-    style="width: 500px"
-    v-for="item in deviceInfomations"
-  >
+  <v-card class="mx-auto" style="width: 500px" v-for="item in deviceInfomations">
     <!-- General Infomation start -->
     <v-card-title> General Infomation </v-card-title>
 
@@ -88,11 +84,7 @@ const deviceInfomations = ref([
       <v-card-title> Interface </v-card-title>
       <v-spacer></v-spacer>
 
-      <v-btn
-        :icon="show1 ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-        @click="show1 = !show1"
-      >
-      </v-btn>
+      <v-btn :icon="show1 ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="show1 = !show1"> </v-btn>
     </v-card-actions>
 
     <v-card elevation="0" style="padding-left: 16px; padding-right: 16px">
@@ -142,11 +134,7 @@ const deviceInfomations = ref([
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        :icon="show2 ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-        @click="show2 = !show2"
-      >
-      </v-btn>
+      <v-btn :icon="show2 ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="show2 = !show2"> </v-btn>
     </v-card-actions>
 
     <div v-show="show2">
