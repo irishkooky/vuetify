@@ -15,7 +15,7 @@
           name: 'bundleEther1.100',
           detail: {
             description: 'to-Node11',
-            ipAddress: [' 192.168.11.1/24'],
+            ipAddress: [{ address: '192.168.21.1/24' }],
           },
         },
         {
@@ -47,7 +47,7 @@
           name: 'bundleEther1.100',
           detail: {
             description: 'to-Node11',
-            ipAddress: [' 192.168.11.1/24'],
+            ipAddress: [{ address: '192.168.21.1/24' }],
           },
         },
         {

@@ -15,7 +15,10 @@
               name: string
               detail: {
                 description: string
-                ipAddress: string[]
+                ipAddress: {
+                  address: string
+                  secondary?: boolean
+                }[]
               }
             }[]
             routing: {
