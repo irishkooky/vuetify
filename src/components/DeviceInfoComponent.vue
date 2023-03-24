@@ -13,20 +13,16 @@
             exportPolicy?: string
             interface: {
               name: string
-              detail: {
-                description: string
-                ipAddress: {
-                  address: string
-                  secondary?: boolean
-                }[]
+              description: string
+              ipAddress: {
+                address: string
+                isSecondary: boolean
               }
             }[]
-            routing: {
-              bgpNeighbor: {
-                address: string
-                as: string
-              }[]
-            }
+            bgpNeighbor: {
+              address: string
+              as: string
+            }[]
           }[]
         | null
     }>(),
