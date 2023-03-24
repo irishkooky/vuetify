@@ -12,13 +12,15 @@
       exportPolicy: 'SET-C10',
       interface: [
         {
-          'bundleEther1.100': {
-            //Interface名（可変）
+          name: 'bundleEther1.100',
+          detail: {
             description: 'to-Node11',
             ipAddress: [' 192.168.11.1/24'],
           },
-          'gigabitEthernet0/0/0/0': {
-            //Interface名（可変）
+        },
+        {
+          name: 'gigabitEthernet0/0/0/0',
+          detail: {
             description: 'to - Node21',
             ipAddress: [
               { address: '192.168.21.1/24' },
