@@ -9,8 +9,8 @@
         | {
             asNumber: string
             rd: string
-            importPolicy: string
-            exportPolicy: string
+            importPolicy?: string
+            exportPolicy?: string
             interface: {
               name: string
               detail: {
@@ -57,13 +57,15 @@
 
         <tr>
           <td>Import Policy</td>
-          <td>{{ item.importPolicy }}</td>
+          <td v-if="item.importPolicy">{{ item.importPolicy }}</td>
+          <td v-else>-</td>
         </tr>
         <v-divider style="border-top-width: 0px"></v-divider>
 
         <tr>
           <td>Export Policy</td>
-          <td>{{ item.exportPolicy }}</td>
+          <td v-if="item.exportPolicy">{{ item.exportPolicy }}</td>
+          <td v-else>-</td>
         </tr>
       </tbody>
     </v-table>
@@ -79,26 +81,8 @@
 
     <v-card elevation="0" style="padding-left: 16px; padding-right: 16px">
       <div v-show="show1">
-        <div>
-          <v-card-title> BundleEther1.100 </v-card-title>
-
-          <v-table fixed-header style="padding-left: 16px; padding-right: 16px">
-            <tbody>
-              <tr>
-                <td>Description</td>
-                <td>{{ item.asNumber }}</td>
-              </tr>
-              <v-divider style="border-top-width: 0px"></v-divider>
-              <tr>
-                <td>IP Address</td>
-                <td>{{ item.asNumber }}</td>
-              </tr>
-            </tbody>
-          </v-table>
-        </div>
-
-        <div>
-          <v-card-title> GigabitEthernet0/0/0/0 </v-card-title>
+        <div v-for="(inter, interfaceIndex) in item.interface" :key="interfaceIndex">
+          <v-card-title>{{ inter.name }}</v-card-title>
 
           <v-table fixed-header style="padding-left: 16px; padding-right: 16px">
             <tbody>

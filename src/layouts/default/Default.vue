@@ -8,7 +8,6 @@
     {
       asNumber: '65534',
       rd: '65534:100',
-      importPolicy: 'SET-C10',
       exportPolicy: 'SET-C10',
       interface: [
         {
